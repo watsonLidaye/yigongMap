@@ -1,0 +1,71 @@
+<view class="main" style="height:{{height}}px">
+  <!--选择了地址  -->
+  <view wx:if="{{loaction}}" bindtap="chooseAddress" class="map">
+    <map longitude="{{marker[0].longitude}}" latitude='{{marker[0].latitude}}' scale="14" markers="{{marker}}" class="w_100h_100"></map>
+  </view>
+  <!--未选择地址  -->
+  <block wx:if="{{!loaction}}">
+    <view bindtap="chooseAddress" class="item juc_colum_b bg_w">
+      <view class="flex_align">
+        <view class="add">+</view>
+        选择我的位置</view>
+    </view>
+  </block>
+  <!--微信昵称  -->
+  <view class="item jub_jub_center bg_w">
+    <view>我的昵称</view>
+    <view>{{info.username}}</view>
+  </view>
+  <!--联系电话  -->
+  <view class="item jub_jub_center bg_w">
+    <view>联系方式</view>
+    <input placeholder='请输入电话号码' bindinput='recordphone' value="{{info.phone?info.phone:''}}"></input>
+  </view>
+  <!--main_job  -->
+  <view class="item jub_jub_center bg_w">
+    <view>主要负责哪一类型的帮助</view>
+    <picker class="w_500" bindchange="bindPickerChange" value="{{sindex}}" range="{{array}}">
+      <view>{{sindex==-1?'请选择类型':array[sindex]}}</view>
+    </picker>
+  </view>
+  <!--aux_job  -->
+  <view class="item jub_jub_center bg_w border_bottom0" wx:if="{{aux_array.length>0}}">
+    <view>还有哪些类型我可以帮助</view>
+  </view>
+  <view class="item  bg_w flex_align" wx:if="{{aux_array.length>0}}">
+    <view class="w_33 flex_align" wx:for="{{aux_array}}" wx:key="aux_array" bindtap="checkStatus" data-index="{{index}}" data-type="aux">
+      <view>{{item.title}}</view>
+      <view>
+        <icon type='success' color="{{item.status?'#19A7D9':'#ddd'}}" size="20" class="icon"></icon>
+      </view>
+    </view>
+  </view>
+  <!--experience  -->
+  <view class="item jub_jub_center bg_w " bindtap="showEX">
+    <view>我以前参与过哪些帮助</view>
+    <image src="../image/18.png" class="w16h28 mr20 {{exp_show?'rota90':''}}"></image>
+  </view>
+  <view class=" bg_w experience_item {{exp_show?'h400':'h0'}}">
+    <view class="item jub_jub_center" wx:for="{{experience}}" wx:key="experience" bindtap="checkStatus" data-index="{{index}}" data-type="exp">
+      <view>{{item.title}}</view>
+      <view>
+        <icon type='success' color="{{item.status?'#19A7D9':'#ddd'}}" size="20"></icon>
+      </view>
+    </view>
+  </view>
+  <!--remaker  -->
+  <view class="item jub_jub_center border_bottom0 bg_w">
+    <view>备注</view>
+  </view>
+  <view class="pb30 border_bottom0 bg_w">
+    <view class="w600h300 bg_w">
+      <textarea class="w_100h_100" placeholder='请输入你想说的话' maxlength='300' value="{{info.info?info.info:''}}" bindinput='recordText'></textarea>
+      <view class="bottom_text">{{info.info.length?info.info.length:'0'}}/300</view>
+    </view>
+  </view>
+  <view class="submits" wx:if="{{edit_type==0}}" bindtap="submit">提交</view>
+  <view class="bottom_submit" wx:if="{{edit_type==1}}">
+    <view class="submit" bindtap="submit">更新</view>
+    <view class="submit bg_r" bindtap="delect">删除</view>
+  </view>
+</view>

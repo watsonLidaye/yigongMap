@@ -1,0 +1,148 @@
+.main{
+  width: 100%;
+}
+.map{
+  height: 30%;
+  width: 100%;
+}
+.item{
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.jub_jub_center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  input{
+    text-align: right
+  }
+  .border_bottom0{
+    border-bottom: 0rpx;
+  }
+  .flex_align{
+    display: flex;
+    align-items: center;
+  }
+  .w600h300{
+    width: 600rpx;
+    height: 300rpx;
+    border-radius: 18rpx;
+    border:1rpx solid #eee;
+    padding: 30rpx;
+    font-size: 24rpx;
+    margin: 0 auto;
+    position: relative;
+    line-height: 30rpx;
+  }
+  .w_100h_100{
+    width: 100%;
+    height: 100%;
+  }
+  .bottom_text{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 24rpx;
+    padding: 5rpx 20rpx;
+  }
+.juc_colum_b {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+.pb30{
+  padding-bottom: 30rpx;
+}
+.w25h40{
+  width: 18rpx;
+  height: 30rpx;
+}
+.flex_align {
+  display: flex;
+  align-items: center; }
+
+.add{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: 4rpx solid #19A7D9;
+  color: #19A7D9;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  text-align: center;
+  margin-right: 10rpx;
+}
+.icon{
+padding-top: 35rpx;
+margin-left: 10rpx;
+}
+.submit{
+  width: 330rpx;
+  border-radius: 10rpx;
+  height: 100rpx;
+  background: #19A7D9;
+  font-size: 36rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+  margin-top: 30rpx;
+   margin-right: 30rpx;
+}
+.submits{
+   width: 600rpx;
+  border-radius: 10rpx;
+  height: 100rpx;
+  background: #19A7D9;
+  font-size: 36rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+margin: 30rpx auto;
+} 
+.bottom_submit{
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+}
+.w_500{
+  width: 400rpx;
+  text-align: right;
+  height: 100%;
+  line-height: 100rpx;
+}
+.item_list{
+  width: 100%;
+}
+.bg_r{
+  background: #ef3939;
+}
+.w_33{
+  width: 33%;
+  line-height: 100rpx;
+}
+.experience_item{
+  transition: all linear .1s;
+  overflow: hidden;
+}
+.w16h28{
+  width: 16rpx;
+  height: 28rpx;
+   transition: all linear .1s;
+   transform: rotate(90deg)
+}
+.mr20{
+  margin-right: 10rpx;
+}
+.rota90{
+  transform: rotate(-90deg)
+}
+.h400{
+  height: 400rpx;
+}
+.h0{
+  height: 0rpx;
+}

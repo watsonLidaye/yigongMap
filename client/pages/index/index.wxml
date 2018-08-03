@@ -1,0 +1,8 @@
+
+<view class="contanier" style="height:{{height}}px">
+  <image src="../image/01.jpg" class="bg_img"></image>
+  <view class="father_box">
+    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="box bg-g" >我要当义工</button>
+  </view>
+
+</view>
