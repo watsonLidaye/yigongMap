@@ -142,6 +142,7 @@ Page({
     )
   },
   submit() {
+    let that = this
     let current_info = this.data.info
     if (!current_info.latitude) {
       wx.showModal({
@@ -198,7 +199,7 @@ Page({
             console.log(res)
           })
         } else {
-          m_DB.UpdateByWID(Volunteer, res => {
+          m_DB.UpdateByWID(that.data.info.openid, Volunteer, res => {
             console.log(res)
           })
         }
@@ -213,6 +214,7 @@ Page({
   },
 
   delect() {
+    let that = this
     wx.showModal({
       title: '温馨提示',
       content: '确定删除信息吗？',
@@ -221,6 +223,9 @@ Page({
       success: function(res) {
         wx.clearStorageSync('helper')
         if (res.confirm) {
+          m_DB.DeleteByWID(that.data.info.openid, res => {
+            console.log(res)
+          })
           wx.redirectTo({
             url: '/pages/index/index',
           })
