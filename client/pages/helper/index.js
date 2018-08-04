@@ -61,7 +61,7 @@ Page({
       openid: options.openid
     })
     m_DB.GetVolunteerByWID(info.openid, res => {
-      if (res[0]) {
+      if (res) {
         let array = this.data.array
         for (let i in array) {
           if (array[i] == res[0].MainJob) {
@@ -224,8 +224,11 @@ Page({
       cancelText: "再想想",
       success: function(res) {
         wx.clearStorageSync('helper')
+        let data={}
+        data.flag=0
+        data.WID = that.data.openid
         if (res.confirm) {
-          m_DB.DeleteByWID(that.data.info.openid, res => {
+          m_DB.DeleteByWID(data, res => {
             console.log(res)
           })
           wx.redirectTo({
