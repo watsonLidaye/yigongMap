@@ -57,7 +57,8 @@ Page({
     info.openid = options.openid
     this.setData({
       height: wx.getSystemInfoSync().windowHeight,
-      info: info
+      info: info,
+      openid: options.openid
     })
     m_DB.GetVolunteerByWID(info.openid, res => {
       if (res[0]) {
@@ -173,7 +174,7 @@ Page({
       return
     }
     let data = {}
-    data.WID = current_info.openid
+    data.WID = this.data.openid
     data.UserName = current_info.username
     data.Address = current_info.address
     data.Latitude = current_info.latitude
@@ -199,7 +200,8 @@ Page({
             console.log(res)
           })
         } else {
-          m_DB.UpdateByWID(that.data.info.openid, Volunteer, res => {
+          console.log(data)
+          m_DB.UpdateByWID(that.data.openid, Volunteer, res => {
             console.log(res)
           })
         }
