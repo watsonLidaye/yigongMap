@@ -60,7 +60,7 @@ Page({
       info: info
     })
     m_DB.GetVolunteerByWID(info.openid, res => {
-      if (res[0].Phone) {
+      if (res[0]) {
         let array = this.data.array
         for (let i in array) {
           if (array[i] == res[0].MainJob) {
@@ -194,7 +194,7 @@ Page({
       confirmColor: "#19A7D9",
       showCancel: false,
       success: function(res) {
-        if (this.data.edit_type == 0) {
+        if (that.data.edit_type == 0) {
           m_DB.InsertUserInfo(Volunteer, res => {
             console.log(res)
           })
