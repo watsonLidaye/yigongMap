@@ -144,7 +144,7 @@ Page({
   submit() {
     let that = this
     let current_info = this.data.info
-    if (this.data.loaction) {
+    if (!this.data.loaction) {
       wx.showModal({
         title: '温馨提示',
         content: '请选择您的位置',
