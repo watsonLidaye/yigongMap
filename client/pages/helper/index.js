@@ -62,6 +62,11 @@ Page({
     })
     m_DB.GetVolunteerByWID(info.openid, res => {
       if (res.length>0) {
+        let marker = this.data.marker
+        marker[0].latitude = Number(res[0].Latitude)
+        marker[0].longitude = Number(res[0].Longitude)
+        console.log(marker)
+        this.setData({ marker: marker})
         let array = this.data.array
         for (let i in array) {
           if (array[i] == res[0].MainJob) {
@@ -74,9 +79,8 @@ Page({
         info.username = res[0].UserName
         info.address = res[0].Address
         info.name = res[0].AddressName
-        info.latitude = Number(res[0].latitude)
-        info.longitude = Number(res[0].longitude)
-        info.longitude = Number(res[0].longitude)
+        info.latitude = Number(res[0].Latitude)
+        info.longitude = Number(res[0].Longitude)
         info.phone = res[0].Phone
         info.info = res[0].Info
         this.setData({
