@@ -24,6 +24,9 @@ Page({
   },
   //peifeng
   onGotUserInfo(e) {
+    wx.showLoading({
+      title: '登陆中...',
+    })
     let jumpStauts = 0
     let nickName = e.detail.userInfo.nickName
     let user_list = manger_list
@@ -48,7 +51,9 @@ Page({
             wx.navigateTo({
               url: path + '&openid=' + res.openid,
             })
+            wx.hideLoading()
           })
+        
         },
         fail: function(res) {},
         complete: function(res) {},

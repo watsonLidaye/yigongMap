@@ -59,7 +59,7 @@
   </view>
   <view class="pb30 border_bottom0 bg_w">
     <view class="w600h300 bg_w">
-      <textarea class="w_100h_100" placeholder='请输入你想说的话' maxlength='300' value="{{info.info?info.info:''}}" bindinput='recordText'></textarea>
+      <textarea class="w_100h_100" placeholder='请输入你想说的话' maxlength='300' value="{{info.info?info.info:''}}" bindinput='recordText' cursor-spacing="100"></textarea>
       <view class="bottom_text">{{info.info.length?info.info.length:'0'}}/300</view>
     </view>
   </view>

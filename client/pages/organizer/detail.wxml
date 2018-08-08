@@ -1,10 +1,10 @@
 <view class="item jub_jub_center">
   <view>微信昵称：</view>
-  <view>{{detail.username}}</view>
+  <view>{{detail.UserName}}</view>
 </view>
 <view class="item jub_jub_center">
   <view>联系电话：</view>
-  <view>{{detail.phone}}</view>
+  <view>{{detail.Phone}}</view>
 </view>
 <view class="item jub_jub_center">
   <view>价值</view>
@@ -15,25 +15,25 @@
 <view class="item jub_jub_center">
   <view>当前状态</view>
   <view class="flex_align">
-    {{detail.status==0?'待命':''}}
-    {{detail.status==1?'正忙':''}}
-    {{detail.status==2?'帮不上忙':''}}
+    {{detail.Status==0?'待命':''}}
+    {{detail.Status==1?'正忙':''}}
+    {{detail.Status==2?'帮不上忙':''}}
   </view>
 </view>
 <view class="item jub_jub_center">
   <view>主要负责的义工类型:</view>
-  <view>{{detail.main_job}}</view>
+  <view>{{detail.MainJob}}</view>
 </view>
-<view class="item jub_jub_center" wx:if="{{detail.aux_job.length>0}}">
+<view class="item jub_jub_center" wx:if="{{detail.AuxJob.length>0}}">
   <view>次要负责的义工类型:</view>
-  <view><block wx:for="{{detail.aux_job}}" wx:key="aux_job" wx:if="{{item.status}}">{{item.title}},</block></view>
+  <view><block wx:for="{{detail.AuxJob}}" wx:key="AuxJob"  wx:if="{{item.status}}">{{item.title}},</block></view>
 </view>
-<view class="item jub_jub_center bor0" wx:if="{{detail.aux_job.length>0}}">
+<view class="item jub_jub_center bor0" wx:if="{{detail.AuxJob.length>0}}">
   <view>我的经历:</view>
 
 </view>
-<view class="item jub_jub_center" wx:if="{{detail.aux_job.length>0}}">
-  <block wx:for="{{detail.experience}}" wx:key="experience" wx:if="{{item.status}}">{{item.title}},  </block>
+<view class="item jub_jub_center" wx:if="{{detail.Experience.length>0}}">
+  <block wx:for="{{detail.Experience}}" wx:key="Experience" wx:if="{{item.status}}">{{item.title}},  </block>
 
 </view>
 
@@ -44,10 +44,10 @@
 <view class="item jub_jub_center bor0 ">
   <view>备注：</view>
 </view>
-  <view class="detail  bg_w border_0">{{detail.info}}</view>
+  <view class="detail  bg_w border_0">{{detail.Info}}</view>
 
 <view class="bottom both">
-  <view class="left" bindtap="operation" data-op='1' wx:if="{{detail.status!=1}}">可以帮忙</view>
-  <view class="left bg-g" bindtap="operation" data-op="2" wx:if="{{detail.status!=2}}">帮不上忙</view>
-  <view class="left bg-y" bindtap="operation" data-op="0" wx:if="{{detail.status!=0}}">恢复</view>
+  <view class="left" bindtap="operation" data-op='1' wx:if="{{detail.Status!=1}}">可以帮忙</view>
+  <view class="left bg-g" bindtap="operation" data-op="2" wx:if="{{detail.Status!=2}}">帮不上忙</view>
+  <view class="left bg-y" bindtap="operation" data-op="0" wx:if="{{detail.Status!=0}}">恢复</view>
 </view>
