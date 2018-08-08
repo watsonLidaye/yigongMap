@@ -138,6 +138,7 @@ Page({
         markers.push(marker)
         wx.setStorageSync('info', info)
       }
+      console.log(markers)
       this.setData({ info: info, markers: markers })
       wx.hideNavigationBarLoading()
     })

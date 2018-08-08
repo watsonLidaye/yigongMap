@@ -2,7 +2,7 @@
   <view>微信昵称：</view>
   <view>{{detail.UserName}}</view>
 </view>
-<view class="item jub_jub_center">
+<view bindtap="phoneCall" class="item jub_jub_center">
   <view>联系电话：</view>
   <view>{{detail.Phone}}</view>
 </view>

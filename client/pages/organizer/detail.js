@@ -138,5 +138,10 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  phoneCall(){
+    wx.makePhoneCall({
+      phoneNumber: this.data.detail.Phone,
+    })
   }
 })
