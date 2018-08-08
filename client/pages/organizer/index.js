@@ -104,6 +104,7 @@ Page({
   onShow: function () {
     wx.showNavigationBarLoading()
     let icon = this.data.icon,
+       markers = [],
       marker = {},
       info = []
     this.setData({ height: wx.getSystemInfoSync().windowHeight })
@@ -114,14 +115,14 @@ Page({
           latitude: 28.1334581468,
           longitude: 112.9950714111,
           title: "",
-          width: 50,
-          height: 50
+          width: 30,
+          height: 30
         }
         marker.latitude = info[z].Latitude
         marker.longitude = info[z].Longitude
         marker.title = info[z].AddressName
         marker.id = info[z].ID
-        let markers = this.data.markers
+        
         let imgs = ""
         for (let i in icon) {
           if (icon[i].type == info[z].MainJob) {
@@ -133,10 +134,11 @@ Page({
           }
         }
         marker.iconPath = imgs
+  
         markers.push(marker)
-        this.setData({ info: info, markers: markers })
         wx.setStorageSync('info', info)
       }
+      this.setData({ info: info, markers: markers })
       wx.hideNavigationBarLoading()
     })
   },

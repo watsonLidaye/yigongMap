@@ -9,7 +9,7 @@
 <view class="item jub_jub_center">
   <view>价值</view>
   <view class="flex_align">
-    <image src="/pages/image/02.jpg" wx:for="{{value}}" class="w40h35"></image>
+    <image src="/pages/image/02.jpg" wx:for="{{value}}" wx:key="value" class="w40h35"></image>
   </view>
 </view>
 <view class="item jub_jub_center">
