@@ -115,8 +115,8 @@ Page({
           latitude: 28.1334581468,
           longitude: 112.9950714111,
           title: "",
-          width: 30,
-          height: 30
+          width: 50,
+          height: 50
         }
         marker.latitude = info[z].Latitude
         marker.longitude = info[z].Longitude

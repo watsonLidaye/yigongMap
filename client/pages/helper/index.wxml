@@ -1,7 +1,7 @@
 <view class="main" style="height:{{height}}px">
   <!--选择了地址  -->
-  <view wx:if="{{loaction}}" bindtap="chooseAddress" class="map">
-    <map longitude="{{marker[0].longitude}}" latitude='{{marker[0].latitude}}' scale="14" markers="{{marker}}" class="w_100h_100"></map>
+  <view wx:if="{{loaction}}"  class="map">
+    <map bindtap="chooseAddress" longitude="{{marker[0].longitude}}" latitude='{{marker[0].latitude}}' scale="14" markers="{{marker}}" class="w_100h_100"></map>
   </view>
   <!--未选择地址  -->
   <block wx:if="{{!loaction}}">
