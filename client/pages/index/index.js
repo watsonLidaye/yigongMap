@@ -45,12 +45,9 @@ Page({
           path = "/pages/organizer/index?"
           break;
       }
-      console.log('这一步')
       wx.login({
         success: function(res) {
-          console.log('这一步')
           m_DB.GetOpenID(res.code, res => {
-            console.log('这一步')
             wx.navigateTo({
               url: path + '&openid=' + res.openid,
             })
