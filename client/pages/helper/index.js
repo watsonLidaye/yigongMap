@@ -199,16 +199,16 @@ Page({
       confirmColor: "#19A7D9",
       showCancel: false,
       success: function(res) {
-        if (that.data.edit_type == 0) {
+        // if (that.data.edit_type == 0) {
           m_DB.InsertUserInfo(Volunteer, res => {
             console.log(res)
           })
-        } else {
-          console.log(data)
-          m_DB.UpdateByWID(that.data.openid, Volunteer, res => {
-            console.log(res)
-          })
-        }
+        // } else {
+        //   console.log(data)
+        //   m_DB.UpdateByWID(that.data.openid, Volunteer, res => {
+        //     console.log(res)
+        //   })
+        // }
 
         if (res.confirm) {
           wx.redirectTo({
