@@ -200,6 +200,9 @@ Page({
       showCancel: false,
       success: function(res) {
         // if (that.data.edit_type == 0) {
+        m_DB.DeleteByWID(data.WID, res => {
+          console.log(res)
+        })
           m_DB.InsertUserInfo(Volunteer, res => {
             console.log(res)
           })
