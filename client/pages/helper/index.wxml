@@ -8,7 +8,7 @@
     <view bindtap="chooseAddress" class="item juc_colum_b bg_w">
       <view class="flex_align">
         <view class="add">+</view>
-        请选择选择位置</view>
+        请选择位置</view>
     </view>
   </block>
   <!--微信昵称  -->

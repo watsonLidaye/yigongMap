@@ -82,7 +82,11 @@ Page({
         ]
 
       },
-    ]
+    ],
+    location:{
+      latitude:0,
+      longitude:0
+    }
   },
 
   /**
@@ -102,9 +106,31 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let that = this,
+      location={}
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        location.latitude = res.latitude
+        location.longitude = res.longitude
+        that.setData({ location: location})
+      },
+      fail() {
+          wx.showModal({
+            title: '温馨提示',
+            content: '您拒绝了地理位置请求，默认以长沙市中心位置显示',
+          })
+      },
+      complete(){
+        that.pageGet()
+      }
+    })
+   
+  },
+  pageGet(){
     wx.showNavigationBarLoading()
     let icon = this.data.icon,
-       markers = [],
+      markers = [],
       marker = {},
       info = []
     this.setData({ height: wx.getSystemInfoSync().windowHeight })
@@ -122,7 +148,7 @@ Page({
         marker.longitude = info[z].Longitude
         marker.title = info[z].AddressName
         marker.id = info[z].ID
-        
+
         let imgs = ""
         for (let i in icon) {
           if (icon[i].type == info[z].MainJob) {
@@ -134,7 +160,7 @@ Page({
           }
         }
         marker.iconPath = imgs
-  
+
         markers.push(marker)
         wx.setStorageSync('info', info)
       }
