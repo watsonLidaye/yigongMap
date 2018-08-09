@@ -36,12 +36,12 @@ Page({
       status: false
     }, ],
     marker: [{
-      id: 4,
+      // id: 4,
       latitude: 28.1334581468,
       longitude: 112.9950714111,
       title: "",
-      width: 20,
-      height: 20
+      // width: 20,
+      // height: 20
     }],
     sindex: -1,
     edit_type: 0
