@@ -66,6 +66,6 @@
   <view class="submits" wx:if="{{edit_type==0}}" bindtap="submit">提交</view>
   <view class="bottom_submit" wx:if="{{edit_type==1}}">
     <view class="submit" bindtap="submit">更新</view>
-    <view class="submits bg_r" bindtap="delect">删除</view>
+    <view class="submit bg_r" bindtap="delect">删除</view>
   </view>
 </view>
