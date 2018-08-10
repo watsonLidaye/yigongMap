@@ -21,17 +21,8 @@ const CONF = {
         port: 3306,
         user: 'root',
         db: 'cAuth',
-        pass: 'wxcf2d491399796ad0',
+        pass: 'xxxy0917',
         char: 'utf8mb4'
-    },
-
-    mapMysql: {
-      host: 'localhost',
-      port: 3306,
-      user: 'root',
-      db: 'DBMap',
-      pass: 'wxcf2d491399796ad0',
-      char: 'utf8mb4'
     },
 
     cos: {

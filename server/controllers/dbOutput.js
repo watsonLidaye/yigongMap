@@ -1,22 +1,6 @@
-const {
-  mapMysql: config
-} = require('../config')
-
 const { mysql } = require('../qcloud')
 
 module.exports = async(ctx, next) => {
-  /*const knex = require('knex')({
-    client: 'mysql',
-    connection: {
-      host: config.host,
-      port: config.port,
-      user: config.user,
-      password: config.pass,
-      database: config.db,
-      charset: config.char,
-      multipleStatements: true
-    }
-  })*/
 
   //分三种情况：1、读取全部管理员列表；2、读取全部有效的义工列表；3、读取特定WID的有效的义工列表
   var flag = ctx.request.body.flag
