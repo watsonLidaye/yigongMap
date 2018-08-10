@@ -33,12 +33,18 @@ module.exports = async(ctx, next) => {
   {
     let WID = ctx.request.body.WID;
     let UserInfo = ctx.request.body.UserInfo;
+    //先删除
     await mysql('t_VolunteerList').where({
       Valid: 1,
       WID: WID
-    }).update(UserInfo).then(res => {
+    }).update('Valid', 0).then(res => {
+
+    });
+    //再新建一条
+    await mysql('t_VolunteerList').insert(UserInfo).then(res => {
       ctx.state.code = 200;
-      ctx.state.data = res;});
+      ctx.state.data = res;
+    });
   } else if (flag === 2) //写入新的一条数据
   {
     let UserInfo = ctx.request.body.UserInfo;
