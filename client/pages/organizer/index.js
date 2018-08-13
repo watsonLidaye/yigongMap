@@ -99,33 +99,32 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    let that = this,
+      location = {}
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        location.latitude = res.latitude
+        location.longitude = res.longitude
+        that.setData({ location: location })
+      },
+      fail() {
+        wx.showModal({
+          title: '温馨提示',
+          content: '您拒绝了地理位置请求，默认以长沙市中心位置显示',
+        })
+      },
+      complete() {
+        that.pageGet()
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let that = this,
-      location={}
-    wx.getLocation({
-      type: 'wgs84',
-      success: function (res) {
-        location.latitude = res.latitude
-        location.longitude = res.longitude
-        that.setData({ location: location})
-      },
-      fail() {
-          wx.showModal({
-            title: '温馨提示',
-            content: '您拒绝了地理位置请求，默认以长沙市中心位置显示',
-          })
-      },
-      complete(){
-        that.pageGet()
-      }
-    })
-   
+
   },
   pageGet(){
     wx.showNavigationBarLoading()
