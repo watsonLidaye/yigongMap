@@ -1,4 +1,3 @@
 <view class="box" style="height:{{height}}px">
   <map longitude="{{location.longitude!=0?location.longitude:'112.9950714111'}}" latitude="{{location.latitude!=0?location.latitude:'28.1334581468'}}" scale="14" data-index="" show-location markers="{{markers}}"bindmarkertap="markertap"  ></map>
-  <view stle="display:none">{{markers}}</view>
 </view>

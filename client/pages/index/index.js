@@ -42,12 +42,13 @@ Page({
                 jumpStauts = 1
               }
             }
+            wx.setStorageSync('jumpStauts', jumpStauts )
             switch (jumpStauts) {
               case 0:
                 path = "/pages/helper/index?username=" + nickName
                 break;
               case 1:
-                path = "/pages/organizer/index?"
+                path = "/pages/organizer/index"
                 break;
             }
             wx.navigateTo({
@@ -67,5 +68,11 @@ Page({
 
   getList(res) {
     manger_list = res
+  },
+  /**
+ * 用户点击右上角分享
+ */
+  onShareAppMessage: function () {
+
   }
 })
