@@ -82,20 +82,23 @@ Page({
         content = "确定设置成不可以帮忙么？"
         break;
     }
+   console.log(detail)
     wx.showModal({
       title: '温馨提示',
       content: content,
       confirmColor: "#19A7D9",
       success: function (res) {
         if (res.confirm) {
-
-          wx.navigateBack({
-            url: '/pages/organizer/index',
-          })
+          m_DB.UpdateStatusByWID(detail.WID, detail.Status, (res) => { 
+            wx.navigateBack({
+              url: '/pages/organizer/index',
+            })
+           })
+         
         }
       },
     })
-    m_DB.UpdateStatusByWID(detail.WID, detail.Status,(res)=>{console.log(res)})
+   
 
   },
   /**
