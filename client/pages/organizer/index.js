@@ -166,7 +166,7 @@ Page({
       this.setData({ info: info, markers: markers })
       wx.hideNavigationBarLoading()
     })
-  },
+  },   
   markertap(e) {
     wx.navigateTo({
       url: '/pages/organizer/detail?id=' + e.markerId,

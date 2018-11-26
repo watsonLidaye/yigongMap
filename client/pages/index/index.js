@@ -31,9 +31,7 @@ Page({
     let nickName = e.detail.userInfo.nickName
     let user_list = manger_list
     let path = ""
- 
     if (e.detail.userInfo.nickName) {
-     
       wx.login({
         success: function(res) {
           m_DB.GetOpenID(res.code, res => {
@@ -45,14 +43,14 @@ Page({
             wx.setStorageSync('jumpStauts', jumpStauts )
             switch (jumpStauts) {
               case 0:
-                path = "/pages/helper/index?username=" + nickName
+                path = "/pages/helper/index?username=" + nickName + '&openid=' + res.openid
                 break;
               case 1:
-                path = "/pages/organizer/index"
+                path = "/pages/organizer/index" + '?openid=' + res.openid
                 break;
             }
             wx.navigateTo({
-              url: path + '&openid=' + res.openid,
+              url: path
             })
             wx.hideLoading()
           })
