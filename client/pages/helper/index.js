@@ -11,6 +11,8 @@ Page({
   data: {
     loaction: false,
     info: {},
+    show_info:false,
+    isAgrees:false,
     array: ["抓捕守护", "宣传文案", "医院陪护", "临时安置"],
     aux_array: [],
     exp_show: false,
@@ -217,7 +219,6 @@ Page({
       },
     })
   },
-
   delect() {
     let that = this
     wx.showModal({
@@ -279,6 +280,19 @@ Page({
     this.setData({
       exp_show: !this.data.exp_show
     })
+  },
+  switch1Change(){
+    let isAgrees = !this.data.isAgrees
+    this.setData({
+      isAgrees: isAgrees
+    })
+  },
+  showMessage(){
+    let show_info = !this.data.show_info
+    this.setData({
+      show_info: show_info
+    })
+    console.log(this.data.show_info)
   },
   /**
    * 页面上拉触底事件的处理函数

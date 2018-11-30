@@ -63,9 +63,27 @@
       <view class="bottom_text">{{info.info.length?info.info.length:'0'}}/300</view>
     </view>
   </view>
-  <view class="submits" wx:if="{{edit_type==0}}" bindtap="submit">提交</view>
+  <view class="texts"   >
+    <view class="flex_align">
+      <switch class="mr20" checked='{{isAgrees}}' bindtap="switch1Change"/>
+      <view >
+        我已经同意<text class='message' bindtap="showMessage">《《用户协议》》  </text>
+      </view>
+    </view>
+  </view>
+  <view class="submits {{isAgrees?'':'disabled'}}" wx:if="{{edit_type==0}}" bindtap="submit" >提交</view>
   <view class="bottom_submit" wx:if="{{edit_type==1}}">
     <view class="submit" bindtap="submit">更新</view>
     <view class="submit bg_r" bindtap="delect">删除</view>
   </view>
+</view>
+<view wx:if="{{show_info}}"  style="height:{{height}}px" class="model">
+<view class="blant">
+<image src="../image/close.png" class="close_img" bindtap='showMessage'></image>
+ <scroll-view  scroll-y class="w_100h_100">
+  <view class="w_100 text_center">用户协议</view>
+  <view>dsadasdsad</view>
+  </scroll-view>
+</view>
+ 
 </view>
